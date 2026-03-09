@@ -1588,6 +1588,10 @@ void PlayerConnection::handleCraftItem(shared_ptr<CraftItemPacket> packet)
 	if(iRecipe == -1)
 		return;
 
+	int recipeCount = (int)Recipes::getInstance()->getRecipies()->size();
+	if(iRecipe < 0 || iRecipe >= recipeCount)
+		return;
+
 	Recipy::INGREDIENTS_REQUIRED *pRecipeIngredientsRequired=Recipes::getInstance()->getRecipeIngredientsArray();
 	shared_ptr<ItemInstance> pTempItemInst=pRecipeIngredientsRequired[iRecipe].pRecipy->assemble(nullptr);
 
