@@ -323,13 +323,13 @@ void Boat::tick()
 		if (!level->isClientSide && !removed)
 		{
 			remove();
-			for (int i = 0; i < 3; i++)
+			for (int i = 0; i < 5; i++)
 			{
 				spawnAtLocation(Tile::wood_Id, 1, 0);
 			}
 			for (int i = 0; i < 2; i++)
 			{
-				spawnAtLocation(Item::stick->id, 1, 0);
+				//spawnAtLocation(Item::stick->id, 1, 0);
 			}
 		}
 	}

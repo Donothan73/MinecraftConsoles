@@ -496,6 +496,16 @@ void HellRandomLevelSource::postProcess(ChunkSource *parent, int xt, int zt)
 		quartzFeature.place(level, pprandom, x, y, z);
 	}
 
+	OreFeature netherGoldFeature(Tile::netherGold_Id, 13, Tile::netherRack_Id);
+	for (int i = 0; i < 16; i++)
+	{
+		int x = xo + pprandom->nextInt(16);
+		int y = pprandom->nextInt(Level::genDepth - 20) + 10;
+		int z = zo + pprandom->nextInt(16);
+		netherGoldFeature.place(level, pprandom, x, y, z);
+	}
+
+
 	for (int i = 0; i < 16; i++)
 	{
 		int x = xo + random->nextInt(16);

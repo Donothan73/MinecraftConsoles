@@ -3,6 +3,7 @@
 #include "net.minecraft.world.level.tile.h"
 #include "net.minecraft.world.level.levelgen.feature.h"
 #include "net.minecraft.world.level.biome.h"
+#include "IslandFeature.h"
 
 BiomeDecorator::BiomeDecorator(Biome *biome)
 {
@@ -62,6 +63,12 @@ void BiomeDecorator::_init()
 	cactusFeature = new CactusFeature();
 	waterlilyFeature = new WaterlilyFeature();
 
+	rubyOreFeature = new OreFeature(Tile::rubyOre_Id, 5);
+	blueroseFlowerFeature = new FlowerFeature(Tile::blueRose_Id);
+	peonyFlowerFeature = new FlowerFeature(Tile::peony_Id);
+	emeraldOreFeature = new OreFeature(Tile::emeraldOre_Id, 3);
+	islandFeature = new IslandFeature(Tile::alphaGrass_Id);
+
 	waterlilyCount = 0;
 	treeCount = 0;
 	flowerCount = 2;
@@ -82,6 +89,16 @@ void BiomeDecorator::decorate()
 {
 	PIXBeginNamedEvent(0,"Decorate ores");
 	decorateOres();
+	PIXEndNamedEvent();
+
+	PIXBeginNamedEvent(0,"Decorate Islands");
+	for (int i = 0; i < random->nextInt(3)-1; i++)
+	{
+		int x = xo + random->nextInt(16) + 8;
+		int z = zo + random->nextInt(16) + 8;
+		islandFeature->place(level, random, x, (level->getTopSolidBlock(x, z)), (z));
+		
+	}
 	PIXEndNamedEvent();
 
 	PIXBeginNamedEvent(0,"Decorate sand/clay/gravel");
@@ -130,19 +147,38 @@ void BiomeDecorator::decorate()
 		hugeMushroomFeature->place(level, random, x, level->getHeightmap(x, z), z);
 	}
 
-	for (int i = 0; i < flowerCount; i++)
+	for (int i = 0; i < flowerCount*2; i++)
 	{
-		int x = xo + random->nextInt(16) + 8;
-		int y = random->nextInt(Level::genDepth);
-		int z = zo + random->nextInt(16) + 8;
-		yellowFlowerFeature->place(level, random, x, y, z);
+		if (random->nextInt(1) == 0)
+		{	
+			int x = xo + random->nextInt(16) + 8;
+			int y = random->nextInt(Level::genDepth);
+			int z = zo + random->nextInt(16) + 8;
+			yellowFlowerFeature->place(level, random, x, y, z);
+		}
+
+		if (random->nextInt(2) == 0)
+		{			
+			int x = xo + random->nextInt(16) + 8;
+			int y = random->nextInt(Level::genDepth);
+			int z = zo + random->nextInt(16) + 8;
+			peonyFlowerFeature->place(level, random, x, y, z);
+		}
+		
+		if (random->nextInt(3) == 0)
+		{
+			int x = xo + random->nextInt(16) + 8;
+			int y = random->nextInt(Level::genDepth);
+			int z = zo + random->nextInt(16) + 8;
+			roseFlowerFeature->place(level, random, x, y, z);
+		}
 
 		if (random->nextInt(4) == 0)
 		{
-			x = xo + random->nextInt(16) + 8;
-			y = random->nextInt(Level::genDepth);
-			z = zo + random->nextInt(16) + 8;
-			roseFlowerFeature->place(level, random, x, y, z);
+			int x = xo + random->nextInt(16) + 8;
+			int y = random->nextInt(Level::genDepth);
+			int z = zo + random->nextInt(16) + 8;
+			blueroseFlowerFeature->place(level, random, x, y, z);
 		}
 	}
 
@@ -324,5 +360,9 @@ void BiomeDecorator::decorateOres()
 	decorateDepthSpan(8, redStoneOreFeature, 0, Level::genDepth / 8);
 	decorateDepthSpan(1, diamondOreFeature, 0, Level::genDepth / 8);
 	decorateDepthAverage(1, lapisOreFeature, Level::genDepth / 8, Level::genDepth / 8);
+	decorateDepthSpan(3, emeraldOreFeature, 64, Level::genDepth *8);
+
+	decorateDepthSpan(10, rubyOreFeature, 0, Level::genDepth / 6);
+
 	level->setInstaTick(false);
 }

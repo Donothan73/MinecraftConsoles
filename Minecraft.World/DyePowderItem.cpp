@@ -285,9 +285,17 @@ bool DyePowderItem::growCrop(shared_ptr<ItemInstance> itemInstance, Level *level
 						{
 							if (Tile::flower->canSurvive(level, xx, yy, zz)) level->setTileAndUpdate(xx, yy, zz, Tile::flower_Id);
 						} 
-						else 
+						else if (random->nextInt(3) != 0) 
 						{
 							if (Tile::rose->canSurvive(level, xx, yy, zz)) level->setTileAndUpdate(xx, yy, zz, Tile::rose_Id);
+						}
+						else if (random->nextInt(3) != 0) 
+						{
+							if (Tile::peony->canSurvive(level, xx, yy, zz)) level->setTileAndUpdate(xx, yy, zz, Tile::peony_Id);
+						}
+						else if (random->nextInt(3) != 0) 
+						{
+							if (Tile::blueRose->canSurvive(level, xx, yy, zz)) level->setTileAndUpdate(xx, yy, zz, Tile::blueRose_Id);
 						}
 					}
 

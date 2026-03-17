@@ -55,6 +55,10 @@ void ClothDyeRecipes::addRecipes(Recipes *r)
 		new ItemInstance(Item::dye_powder, 1, DyePowderItem::RED), 
 		new ItemInstance(Item::dye_powder, 1, DyePowderItem::WHITE),L'D');
 
+	r->addShapelessRecipy(new ItemInstance(Item::dye_powder, 2, DyePowderItem::PINK), //
+		L"tg", 
+		Tile::peony,L'D');
+
 	r->addShapelessRecipy(new ItemInstance(Item::dye_powder, 2, DyePowderItem::ORANGE), //
 		L"zzg",
 		new ItemInstance(Item::dye_powder, 1, DyePowderItem::RED), 
@@ -80,6 +84,10 @@ void ClothDyeRecipes::addRecipes(Recipes *r)
 		new ItemInstance(Item::dye_powder, 1, DyePowderItem::BLACK), 
 		new ItemInstance(Item::dye_powder, 1, DyePowderItem::WHITE), 
 		new ItemInstance(Item::dye_powder, 1, DyePowderItem::WHITE),L'D');
+
+	r->addShapelessRecipy(new ItemInstance(Item::dye_powder, 2, DyePowderItem::LIGHT_BLUE), //
+		L"tg", 
+		Tile::blueRose,L'D');
 
 	r->addShapelessRecipy(new ItemInstance(Item::dye_powder, 2, DyePowderItem::LIGHT_BLUE), //
 		L"zzg",

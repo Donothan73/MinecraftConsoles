@@ -20,17 +20,20 @@ void OreRecipies::_init()
 	ADD_OBJECT(map[3],Tile::emeraldBlock);
 	ADD_OBJECT(map[3],new ItemInstance(Item::emerald, 9));
 
-	ADD_OBJECT(map[4],Tile::lapisBlock);
-	ADD_OBJECT(map[4],new ItemInstance(Item::dye_powder, 9, DyePowderItem::BLUE));
+	ADD_OBJECT(map[4],Tile::rubyBlock);
+	ADD_OBJECT(map[4],new ItemInstance(Item::ruby, 9));
 
-	ADD_OBJECT(map[5],Tile::redstoneBlock);
-	ADD_OBJECT(map[5],new ItemInstance(Item::redStone, 9));
+	ADD_OBJECT(map[5],Tile::lapisBlock);
+	ADD_OBJECT(map[5],new ItemInstance(Item::dye_powder, 9, DyePowderItem::BLUE));
 
-	ADD_OBJECT(map[6],Tile::coalBlock);
-	ADD_OBJECT(map[6],new ItemInstance(Item::coal, 9, CoalItem::STONE_COAL));
+	ADD_OBJECT(map[6],Tile::redstoneBlock);
+	ADD_OBJECT(map[6],new ItemInstance(Item::redStone, 9));
 
-	ADD_OBJECT(map[7],Tile::hayBlock);
-	ADD_OBJECT(map[7],new ItemInstance(Item::wheat, 9));
+	ADD_OBJECT(map[7],Tile::coalBlock);
+	ADD_OBJECT(map[7],new ItemInstance(Item::coal, 9, CoalItem::STONE_COAL));
+
+	ADD_OBJECT(map[8],Tile::hayBlock);
+	ADD_OBJECT(map[8],new ItemInstance(Item::wheat, 9));
 }
 void OreRecipies::addRecipes(Recipes *r) 
 {

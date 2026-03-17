@@ -9,7 +9,7 @@ class LeafTile : public TransparentTile
 	friend class Tile;
 	friend class ChunkRebuildData;
 public:
-	static const wstring TEXTURES[2][4];
+	static const wstring TEXTURES[2][5];
 	static const int REQUIRED_WOOD_RANGE = 4;
 
     static const int UPDATE_LEAF_BIT = 8;
@@ -18,8 +18,9 @@ public:
     static const int EVERGREEN_LEAF = 1;
     static const int BIRCH_LEAF = 2;
 	static const int JUNGLE_LEAF = 3;
+	static const int ALPHA_LEAF = 4;
 
-	static const int LEAF_NAMES_LENGTH = 4;
+	static const int LEAF_NAMES_LENGTH = 5;
 
 	static const unsigned int LEAF_NAMES[LEAF_NAMES_LENGTH];
 private:

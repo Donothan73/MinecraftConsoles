@@ -510,7 +510,7 @@ void PreStitchedTextureMap::loadUVs()
 		ADD_ICON(10,	3,	L"name_tag")
 		ADD_ICON(10,	4,	L"lead")
 		ADD_ICON(10,	5,	L"netherbrick")
-		//ADD_ICON(10,	6,	L"unused")
+		ADD_ICON(10,	6,	L"ruby_sword")
 		ADD_ICON(10,	7,	L"minecart_furnace")
 		ADD_ICON(10,	8,	L"charcoal")
 		ADD_ICON(10,	9,	L"monsterPlacer_overlay")
@@ -526,8 +526,8 @@ void PreStitchedTextureMap::loadUVs()
 		//ADD_ICON(11,	2,	L"unused")
 		//ADD_ICON(11,	3,	L"unused")
 		//ADD_ICON(11,	4,	L"unused")
-		//ADD_ICON(11,	5,	L"unused")
-		//ADD_ICON(11,	6,	L"unused")
+		ADD_ICON(11,	5,	L"ruby_helmet")
+		ADD_ICON(11,	6,	L"ruby_shovel")
 		ADD_ICON(11,	7,	L"minecart_hopper")
 		ADD_ICON(11,	8,	L"hopper")
 		ADD_ICON(11,	9,	L"nether_star")
@@ -543,10 +543,10 @@ void PreStitchedTextureMap::loadUVs()
 		//ADD_ICON(12,	2,	L"unused")
 		//ADD_ICON(12,	3,	L"unused")
 		//ADD_ICON(12,	4,	L"unused")
-		//ADD_ICON(12,	5,	L"unused")
-		//ADD_ICON(12,	6,	L"unused")
+		ADD_ICON(12,	5,	L"ruby_chestplate")
+		ADD_ICON(12,	6,	L"ruby_pickaxe")
 		ADD_ICON(12,	7,	L"minecart_tnt")
-		//ADD_ICON(12,	8,	L"unused")
+		ADD_ICON(12,	8,	L"mutton_cooked")
 		ADD_ICON(12,	9,	L"fireworks")
 		ADD_ICON(12,	10,	L"fireworks_charge")
 		ADD_ICON(12,	11,	L"fireworks_charge_overlay")
@@ -555,13 +555,18 @@ void PreStitchedTextureMap::loadUVs()
 		ADD_ICON(12,	14,	L"frame")
 		ADD_ICON(12,	15,	L"enchantedBook")
 
+		ADD_ICON(13,	5,	L"ruby_leggings")
+		ADD_ICON(13,	6,	L"ruby_axe")
+		ADD_ICON(13,	5,	L"mutton_raw")
+		ADD_ICON(13,	6,	L"apple_ruby")
+
 		ADD_ICON(14,	0,	L"skull_skeleton")
 		ADD_ICON(14,	1,	L"skull_wither")
 		ADD_ICON(14,	2,	L"skull_zombie")
 		ADD_ICON(14,	3,	L"skull_char")
 		ADD_ICON(14,	4,	L"skull_creeper")
-		//ADD_ICON(14,	5,	L"unused")
-		//ADD_ICON(14,	6,	L"unused")
+		ADD_ICON(14,	5,	L"ruby_boots")
+		ADD_ICON(14,	6,	L"ruby_hoe")
 		ADD_ICON_WITH_NAME(14,	7,	L"compassP0", L"compass") // 4J Added
 		ADD_ICON_WITH_NAME(14,	8,	L"compassP1", L"compass") // 4J Added
 		ADD_ICON_WITH_NAME(14,	9,	L"compassP2", L"compass") // 4J Added
@@ -986,5 +991,24 @@ void PreStitchedTextureMap::loadUVs()
 		ADD_ICON(19,	13,	L"glass_pane_top_silver");
 		ADD_ICON(19,	14,	L"glass_pane_top_white");
 		ADD_ICON(19,	15,	L"glass_pane_top_yellow");
+
+		ADD_ICON(20,	0,	L"ruby_ore");
+		ADD_ICON(20,	1,	L"ruby_block");
+		ADD_ICON(20,	2,	L"flower_peony");
+		ADD_ICON(20,	3,	L"flower_blue_rose");
+		ADD_ICON(20,	4,	L"gold_ore_netherrack");
+		ADD_ICON(20,	5,	L"glow_lichen");
+		ADD_ICON(20,	6,	L"end_rod");
+		ADD_ICON(20,	7,	L"smooth_tuff");
+		ADD_ICON(20,	8,	L"tuff");
+		ADD_ICON(20,	9,	L"smooth_andesite");
+		ADD_ICON(20,	10,	L"andesite");
+		ADD_ICON(20,	11,	L"smooth_granite");
+		ADD_ICON(20,	12,	L"granite");
+		ADD_ICON(20,	13,	L"alpha_grass_side");
+		ADD_ICON(20,	14,	L"alpha_grass_top");
+		ADD_ICON(20,	15,	L"alpha_leaves");
+
+		ADD_ICON(21,	0,	L"alpha_leaves_opaque");
 	}
 }

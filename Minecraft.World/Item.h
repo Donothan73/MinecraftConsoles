@@ -45,6 +45,7 @@ public:
 		eMaterial_iron,
 		eMaterial_gold,
 		eMaterial_diamond,
+		eMaterial_ruby,
 		eMaterial_cloth,
 		eMaterial_chain, // 4J Stu - It's available in creative in 1.8
 		eMaterial_detector,
@@ -158,6 +159,7 @@ public:
 		static const Tier *IRON; //
 		static const Tier *DIAMOND; //
 		static const Tier *GOLD;
+		static const Tier *RUBY;
 
 	private:
 		const int level;
@@ -216,6 +218,22 @@ public:
 	static Item *shovel_diamond;
 	static Item *pickAxe_diamond;
 	static Item *hatchet_diamond;
+
+	static Item *sword_ruby;
+	static Item *shovel_ruby;
+	static Item *pickAxe_ruby;
+	static Item *hatchet_ruby;
+	static Item *hoe_ruby;
+	static Item *ruby;
+
+	static Item *mutton_raw;
+	static Item *mutton_cooked;
+	static Item *apple_ruby;
+
+	static ArmorItem *helmet_ruby;
+	static ArmorItem *chestplate_ruby;
+	static ArmorItem *leggings_ruby;
+	static ArmorItem *boots_ruby;
 
 	static Item *stick;
 	static Item *bowl;
@@ -617,6 +635,22 @@ public:
 	static const int horseArmorDiamond_Id = 419;
 	static const int lead_Id = 420;
 	static const int nameTag_Id = 421;
+
+	static const int ruby_Id			= 422;
+	static const int sword_ruby_Id = 423;
+	static const int shovel_ruby_Id = 424;
+	static const int pickAxe_ruby_Id= 425;
+	static const int hatchet_ruby_Id = 426;
+	static const int hoe_ruby_Id = 427;
+
+	static const int helmet_ruby_Id		= 428;
+	static const int chestplate_ruby_Id	= 429;
+	static const int leggings_ruby_Id	= 430;
+	static const int boots_ruby_Id		= 431;
+
+	static const int mutton_cooked_Id = 432;
+	static const int mutton_raw_Id = 433;
+	static const int apple_ruby_Id = 434;
 
 public:
 	const int id;

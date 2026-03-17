@@ -47,6 +47,12 @@ protected:
 	Feature *reedsFeature;
 	Feature *cactusFeature;
 	Feature *waterlilyFeature;
+	
+	Feature *rubyOreFeature;
+	Feature *emeraldOreFeature;
+	Feature *blueroseFlowerFeature;
+	Feature *peonyFlowerFeature;
+	Feature *islandFeature;
 
 	int waterlilyCount;
 	int treeCount;

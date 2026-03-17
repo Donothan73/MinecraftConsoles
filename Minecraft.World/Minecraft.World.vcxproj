@@ -3143,6 +3143,7 @@
     <ClInclude Include="ItemStat.h" />
     <ClInclude Include="LadderTile.h" />
     <ClInclude Include="LakeFeature.h" />
+    <ClInclude Include="IslandFeature.h" />
     <ClInclude Include="LargeCaveFeature.h" />
     <ClInclude Include="LargeFeature.h" />
     <ClInclude Include="LargeHellCaveFeature.h" />
@@ -4086,6 +4087,7 @@
     <ClCompile Include="KeepAlivePacket.cpp" />
     <ClCompile Include="LadderTile.cpp" />
     <ClCompile Include="LakeFeature.cpp" />
+    <ClCompile Include="IslandFeature.cpp" />
     <ClCompile Include="Language.cpp" />
     <ClCompile Include="LargeCaveFeature.cpp" />
     <ClCompile Include="LargeFeature.cpp" />

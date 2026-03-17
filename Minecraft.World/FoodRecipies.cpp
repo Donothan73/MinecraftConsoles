@@ -17,6 +17,14 @@ void FoodRecipies::addRecipes(Recipes *r)
 		L'#', Item::goldIngot, L'X', Item::apple,
 		L'F');
 
+		//r->addShapedRecipy(new ItemInstance(Item::apple_ruby, 1, 0), //
+		//L"ssscicig",
+		//L"###", //
+		//L"#X#", //
+		//L"###", //
+		//L'#', Item::ruby, L'X', Item::apple,
+		//L'F');
+
 	r->addShapedRecipy(new ItemInstance(Item::apple_gold, 1, 1), //
 		L"sssctcig",
 		L"###", //

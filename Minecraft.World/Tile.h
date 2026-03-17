@@ -365,6 +365,14 @@ public:
 	static const int clayHardened_Id = 172;
 	static const int coalBlock_Id = 173;
 
+	static const int rubyOre_Id = 174;
+	static const int rubyBlock_Id = 175;
+	static const int blueRose_Id = 176;
+	static const int peony_Id = 177;
+	//static const int glowLichen_Id = 178;
+	static const int netherGold_Id = 178;
+	static const int alphaGrass_Id = 179;
+
 
 	static Tile *stone;
 	static GrassTile *grass;
@@ -540,6 +548,14 @@ public:
 	static Tile *woolCarpet;
 	static Tile *clayHardened;
 	static Tile *coalBlock;
+
+	static Tile *rubyOre;
+	static Tile *rubyBlock;
+	static Bush *blueRose;
+	static Bush *peony;
+	static Tile *glowLichen;
+	static Tile *netherGold;
+	static MycelTile *alphaGrass;
 
 	static void staticCtor();
 

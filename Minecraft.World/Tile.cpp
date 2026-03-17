@@ -17,6 +17,7 @@
 #include "net.minecraft.h"
 #include "Tile.h"
 
+
 wstring Tile::TILE_DESCRIPTION_PREFIX = L"Tile.";
 
 const float Tile::INDESTRUCTIBLE_DESTROY_TIME = -1.0f;
@@ -219,6 +220,14 @@ Tile *Tile::hayBlock = nullptr;
 Tile *Tile::woolCarpet = nullptr;
 Tile *Tile::clayHardened = nullptr;
 Tile *Tile::coalBlock = nullptr;
+
+Tile *Tile::rubyOre = nullptr;
+Tile *Tile::rubyBlock = nullptr;
+Bush *Tile::blueRose = nullptr;
+Bush *Tile::peony = nullptr;
+Tile *Tile::glowLichen = nullptr;
+Tile *Tile::netherGold = nullptr;
+MycelTile *Tile::alphaGrass = nullptr;
 
 DWORD Tile::tlsIdxShape = TlsAlloc();
 
@@ -441,6 +450,14 @@ void Tile::staticCtor()
 	Tile::woolCarpet =		(new WoolCarpetTile(171))				->setBaseItemTypeAndMaterial(Item::eBaseItemType_carpet,	Item::eMaterial_cloth)->setDestroyTime(0.1f)->setSoundType(SOUND_CLOTH)->setIconName(L"woolCarpet")->setLightBlock(0)->setDescriptionId(IDS_TILE_CARPET)->setUseDescriptionId(IDS_DESC_CARPET);
 	Tile::clayHardened = (new Tile(172, Material::stone))			->setBaseItemTypeAndMaterial(Item::eBaseItemType_clay,	Item::eMaterial_clay)->setDestroyTime(1.25f)->setExplodeable(7)->setSoundType(SOUND_STONE)->setIconName(L"hardened_clay")->setDescriptionId(IDS_TILE_HARDENED_CLAY)->setUseDescriptionId(IDS_DESC_HARDENED_CLAY);
 	Tile::coalBlock = (new Tile(173, Material::stone))				->setBaseItemTypeAndMaterial(Item::eBaseItemType_block,	Item::eMaterial_coal)->setDestroyTime(5.0f)->setExplodeable(10)->setSoundType(SOUND_STONE)->setIconName(L"coal_block")->setDescriptionId(IDS_TILE_COAL)->setUseDescriptionId(IDS_DESC_COAL_BLOCK);
+
+	Tile::rubyOre = (new OreTile(174))													->setDestroyTime(3.0f)->setExplodeable(5)->setSoundType(SOUND_STONE)->setIconName(L"ruby_ore")->setDescriptionId(IDS_TILE_EMERALDORE)->setUseDescriptionId(IDS_DESC_EMERALDORE);
+	Tile::rubyBlock =	(new MetalTile(175))									->setBaseItemTypeAndMaterial(Item::eBaseItemType_block,	Item::eMaterial_emerald)->setDestroyTime(5.0f)->setExplodeable(10)->setSoundType(SOUND_METAL)->setIconName(L"ruby_block")->setDescriptionId(IDS_TILE_EMERALDBLOCK)->setUseDescriptionId(IDS_DESC_EMERALDBLOCK);
+	Tile::blueRose = static_cast<Bush *>((new Bush(176))->setDestroyTime(0.0f)->setSoundType(Tile::SOUND_GRASS)->setIconName(L"flower_blue_rose")->setDescriptionId(IDS_TILE_FLOWER)->setUseDescriptionId(IDS_DESC_FLOWER)->disableMipmap());
+	Tile::peony = static_cast<Bush *>((new Bush(177))->setDestroyTime(0.0f)->setSoundType(Tile::SOUND_GRASS)->setIconName(L"flower_peony")->setDescriptionId(IDS_TILE_FLOWER)->setUseDescriptionId(IDS_DESC_FLOWER)->disableMipmap());
+	//Tile::glowLichen = (new VineTile(178))->setDestroyTime(0.2f)						->setSoundType(SOUND_GRASS)->setLightEmission(0.33f)->setIconName(L"glow_Lichen")->setDescriptionId(IDS_TILE_VINE)->setUseDescriptionId(IDS_DESC_VINE)->sendTileData();
+	Tile::netherGold =	(new OreTile(178))								->setDestroyTime(3.0f)->setExplodeable(5)->setSoundType(SOUND_STONE)->setIconName(L"gold_ore_netherrack")->setDescriptionId(IDS_TILE_NETHER_QUARTZ)->setUseDescriptionId(IDS_DESC_NETHER_QUARTZ_ORE);
+	Tile::alphaGrass = static_cast<MycelTile *>((new MycelTile(179))->setDestroyTime(0.6f)->setSoundType(SOUND_GRASS)->setIconName(L"alpha_grass_side")->setDescriptionId(IDS_TILE_GRASS)->setUseDescriptionId(IDS_DESC_GRASS));
 
 
 	// Special cases for certain items since they can have different icons
@@ -1702,4 +1719,6 @@ const int Tile::netherQuartz_Id;
 const int Tile::quartzBlock_Id;
 const int Tile::stairs_quartz_Id;
 const int Tile::woolCarpet_Id;
+const int Tile::rubyOre_Id;
+const int Tile::rubyBlock_Id;
 #endif

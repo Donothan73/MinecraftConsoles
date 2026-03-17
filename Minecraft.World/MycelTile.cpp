@@ -32,6 +32,12 @@ void MycelTile::registerIcons(IconRegister *iconRegister)
 	icon = iconRegister->registerIcon(L"mycel_side");
 	iconTop = iconRegister->registerIcon(L"mycel_top");
 	iconSnowSide = iconRegister->registerIcon(L"snow_side");
+
+	if (id == Tile::alphaGrass_Id)
+	{
+		icon = iconRegister->registerIcon(L"alpha_grass_side");
+		iconTop = iconRegister->registerIcon(L"alpha_grass_top");
+	}
 }
 
 void MycelTile::tick(Level *level, int x, int y, int z, Random *random)
@@ -64,7 +70,7 @@ void MycelTile::tick(Level *level, int x, int y, int z, Random *random)
 void MycelTile::animateTick(Level *level, int x, int y, int z, Random *random)
 {
 	Tile::animateTick(level, x, y, z, random);
-	if (random->nextInt(10) == 0) level->addParticle(eParticleType_townaura, x + random->nextFloat(), y + 1.1f, z + random->nextFloat(), 0, 0, 0);
+	if (random->nextInt(10) == 0 && id != Tile::alphaGrass_Id) level->addParticle(eParticleType_townaura, x + random->nextFloat(), y + 1.1f, z + random->nextFloat(), 0, 0, 0);
 
 }
 

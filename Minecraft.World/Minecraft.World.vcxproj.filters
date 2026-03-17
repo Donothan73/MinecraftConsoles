@@ -476,6 +476,9 @@
     <ClInclude Include="LakeFeature.h">
       <Filter>net\minecraft\world\level\levelgen\feature</Filter>
     </ClInclude>
+    <ClInclude Include="IslandFeature.h">
+      <Filter>net\minecraft\world\level\levelgen\feature</Filter>
+    </ClInclude>
     <ClInclude Include="LightGemFeature.h">
       <Filter>net\minecraft\world\level\levelgen\feature</Filter>
     </ClInclude>
@@ -3344,6 +3347,9 @@
       <Filter>net\minecraft\world\level\levelgen\feature</Filter>
     </ClCompile>
     <ClCompile Include="LakeFeature.cpp">
+      <Filter>net\minecraft\world\level\levelgen\feature</Filter>
+    </ClCompile>
+    <ClCompile Include="IslandFeature.cpp">
       <Filter>net\minecraft\world\level\levelgen\feature</Filter>
     </ClCompile>
     <ClCompile Include="LightGemFeature.cpp">

@@ -33,6 +33,7 @@ RandomLevelSource::RandomLevelSource(Level *level, int64_t seed, bool generateSt
 	level->getLevelData()->getMoatFlags(&m_classicEdgeMoat, &m_smallEdgeMoat, &m_mediumEdgeMoat);
 #endif
 	caveFeature = new LargeCaveFeature();
+	caveLargeFeature = new LargeCaveFeature();
 	strongholdFeature = new StrongholdFeature();
 	villageFeature = new VillageFeature(m_XZSize);
 	mineShaftFeature = new MineShaftFeature();
@@ -68,6 +69,7 @@ RandomLevelSource::RandomLevelSource(Level *level, int64_t seed, bool generateSt
 RandomLevelSource::~RandomLevelSource()
 {
 	delete caveFeature;
+	delete caveLargeFeature;
 	delete strongholdFeature;
 	delete villageFeature;
 	delete mineShaftFeature;
@@ -487,6 +489,7 @@ LevelChunk *RandomLevelSource::getChunk(int xOffs, int zOffs)
 	delete [] biomes.data;
 
 	caveFeature->apply(this, level, xOffs, zOffs, blocks);
+	caveLargeFeature->apply(this, level, xOffs / 4, zOffs / 4, blocks);
 	// 4J Stu Design Change - 1.8 gen goes stronghold, mineshaft, village, canyon
 	// this changed in 1.2 to canyon, mineshaft, village, stronghold
 	// This change makes sense as it stops canyons running through other structures

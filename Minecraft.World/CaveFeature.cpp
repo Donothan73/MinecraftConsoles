@@ -7,7 +7,7 @@ using namespace std;
 bool CaveFeature::place(Level *level, Random *random, int x, int y, int z)
 {
 	float dir = random->nextFloat() * PI;
-	double rd = 8;
+	double rd = 8 + random->nextDouble() * 8;
 
 	double x0 = x + 8 + Mth::sin(dir) * rd;
 	double x1 = x + 8 - Mth::sin(dir) * rd;
