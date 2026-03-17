@@ -475,7 +475,14 @@ bool BasicTree::checkLocation()
     int baseMaterial = thisLevel->getTile(origin[0], origin[1] - 1, origin[2]);
     if (!((baseMaterial == 2) || (baseMaterial == 3)))
 	{
-        return false;
+        if (baseMaterial == Tile::alphaGrass_Id)
+	    {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     int allowedHeight = checkLine(startPosition, endPosition);
     // If the set height is good, go with that

@@ -104,11 +104,11 @@ bool IslandFeature::place(Level *level, Random *random, int x, int y, int z)
 		{
 			for (int yy = 0; yy < 8; yy++)
 			{
-				if (grid[((xx) * 8 + (zz)) * 8  + (yy)])
+				if (grid[((xx) * 16 + (zz)) * 8 + (yy)])
 				{
 					level->setTileAndData(x + xx, y + yy+100+height, z + zz, tile, 0, Tile::UPDATE_CLIENTS);
-					level->setTileAndData(x + xx, y + yy+98+height, z + zz, Tile::dirt_Id, 0, Tile::UPDATE_CLIENTS);
-					level->setTileAndData(x + xx, y + yy+96+height, z + zz, Tile::stone_Id, 0, Tile::UPDATE_CLIENTS);
+					level->setTileAndData(x + xx, y + yy+99+height, z + zz, Tile::dirt_Id, 0, Tile::UPDATE_CLIENTS);
+					level->setTileAndData(x + xx, y + yy+98+height, z + zz, Tile::stone_Id, 0, Tile::UPDATE_CLIENTS);
 				}
 			}
 		}
