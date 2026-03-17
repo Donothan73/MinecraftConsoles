@@ -11,10 +11,10 @@ const unsigned int LeafTile::LEAF_NAMES[LEAF_NAMES_LENGTH] = {	IDS_TILE_LEAVES_O
 	IDS_TILE_LEAVES_SPRUCE,
 	IDS_TILE_LEAVES_BIRCH,
 	IDS_TILE_LEAVES_JUNGLE,
-	IDS_TILE_LEAVES_OAK,
+	IDS_TILE_LEAVES_JUNGLE,
 };
 
-const wstring LeafTile::TEXTURES[2][5] = { {L"leaves", L"leaves_spruce", L"leaves", L"leaves_jungle", L"alpha_leaves"}, {L"leaves_opaque", L"leaves_spruce_opaque", L"leaves_opaque", L"leaves_jungle_opaque", L"alpha_leaves_opaque"},};
+const wstring LeafTile::TEXTURES[2][5] = { {L"leaves", L"leaves_spruce", L"leaves", L"leaves_jungle", L"leaves_alpha"}, {L"leaves_opaque", L"leaves_spruce_opaque", L"leaves_opaque", L"leaves_jungle_opaque", L"leaves_alpha_opaque"},};
 
 LeafTile::LeafTile(int id) : TransparentTile(id, Material::leaves, false, isSolidRender())
 {

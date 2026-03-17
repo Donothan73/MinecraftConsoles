@@ -251,7 +251,7 @@ bool DyePowderItem::growCrop(shared_ptr<ItemInstance> itemInstance, Level *level
 		}
 		return true;
 	} 
-	else if (tile == Tile::grass_Id) 
+	else if (tile == Tile::grass_Id || tile == Tile::alphaGrass_Id) 
 	{
 		if(!bTestUseOnOnly)
 		{	
@@ -270,6 +270,11 @@ bool DyePowderItem::growCrop(shared_ptr<ItemInstance> itemInstance, Level *level
 						yy += (random->nextInt(3) - 1) * random->nextInt(3) / 2;
 						zz += random->nextInt(3) - 1;
 						if (level->getTile(xx, yy - 1, zz) != Tile::grass_Id || level->isSolidBlockingTile(xx, yy, zz)) 
+						{
+							goto mainloop;
+						}
+
+						if (level->getTile(xx, yy - 1, zz) != Tile::alphaGrass_Id || level->isSolidBlockingTile(xx, yy, zz)) 
 						{
 							goto mainloop;
 						}

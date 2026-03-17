@@ -87,10 +87,6 @@ void BiomeDecorator::_init()
 
 void BiomeDecorator::decorate()
 {
-	PIXBeginNamedEvent(0,"Decorate ores");
-	decorateOres();
-	PIXEndNamedEvent();
-
 	PIXBeginNamedEvent(0,"Decorate Islands");
 	for (int i = 0; i < random->nextInt(3)-1; i++)
 	{
@@ -99,6 +95,10 @@ void BiomeDecorator::decorate()
 		islandFeature->place(level, random, x, (level->getTopSolidBlock(x, z)), (z));
 		
 	}
+	PIXEndNamedEvent();
+
+	PIXBeginNamedEvent(0,"Decorate ores");
+	decorateOres();
 	PIXEndNamedEvent();
 
 	PIXBeginNamedEvent(0,"Decorate sand/clay/gravel");

@@ -1007,8 +1007,8 @@ void PreStitchedTextureMap::loadUVs()
 		ADD_ICON(20,	12,	L"granite");
 		ADD_ICON(20,	13,	L"alpha_grass_side");
 		ADD_ICON(20,	14,	L"alpha_grass_top");
-		ADD_ICON(20,	15,	L"alpha_leaves");
+		ADD_ICON(20,	15,	L"leaves_alpha");
 
-		ADD_ICON(21,	0,	L"alpha_leaves_opaque");
+		ADD_ICON(21,	0,	L"leaves_alpha_opaque");
 	}
 }
