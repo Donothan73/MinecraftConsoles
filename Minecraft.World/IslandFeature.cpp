@@ -3,6 +3,7 @@
 #include "net.minecraft.world.level.h"
 #include "net.minecraft.world.level.tile.h"
 #include "net.minecraft.world.level.biome.h"
+#include "TreeFeature.h"
 
 IslandFeature::IslandFeature(int tile)
 {
@@ -110,10 +111,37 @@ bool IslandFeature::place(Level *level, Random *random, int x, int y, int z)
 					level->setTileAndData(x + xx, y + yy+99+height, z + zz, Tile::dirt_Id, 0, Tile::UPDATE_CLIENTS);
 					level->setTileAndData(x + xx, y + yy+98+height, z + zz, Tile::stone_Id, 0, Tile::UPDATE_CLIENTS);
 				}
+			}
+		}
+	}
 
+	for (int xx = 0; xx < 4; xx++)
+	{
+		for (int zz = 0; zz < 4; zz++)
+		{
+			for (int yy = 0; yy < 6; yy++)
+			{
 				if (grid[((xx) * 16 + (zz)) * 8 + (yy)])
 				{
-					level->setTileAndData(x + xx, y + yy+101+height, z + zz, Tile::water_Id, 0, Tile::UPDATE_CLIENTS);
+						level->setTileAndData(x + xx, y + yy+93+height, z + zz, Tile::stone_Id, 0, Tile::UPDATE_CLIENTS);
+				}
+			}
+		}
+	}
+
+	for (int xx = 0; xx < 12; xx++)
+	{
+		for (int zz = 0; zz < 12; zz++)
+		{
+			for (int yy = 0; yy < 3; yy++)
+			{
+				if (grid[((xx) * 16 + (zz)) * 8 + (yy)])
+				{
+					if (!level->isEmptyTile(x + xx+1, y + yy+105+height, z + zz+1))
+					{
+						level->setTileAndData(x + xx, y + yy+105+height, z + zz, 0, 0, Tile::UPDATE_CLIENTS);
+						level->setTileAndData(x + xx, y + yy+104+height, z + zz, Tile::water_Id, 0, Tile::UPDATE_CLIENTS);
+					}
 				}
 			}
 		}

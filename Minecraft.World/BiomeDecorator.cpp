@@ -88,7 +88,7 @@ void BiomeDecorator::_init()
 void BiomeDecorator::decorate()
 {
 	PIXBeginNamedEvent(0,"Decorate Islands");
-	for (int i = 0; i < random->nextInt(3)-1; i++)
+	for (int i = 0; i < random->nextInt(5)-1; i++)
 	{
 		int x = xo + random->nextInt(16) + 8;
 		int z = zo + random->nextInt(16) + 8;
@@ -136,6 +136,21 @@ void BiomeDecorator::decorate()
 		tree->init(1, 1, 1);
 		tree->place(level, random, x, level->getHeightmap(x, z), z);
 		delete tree;
+	}
+	PIXEndNamedEvent();
+
+	for (int i = 0; i < forests; i++)
+	{
+		
+		int x = xo + random->nextInt(16) + 8;
+		int z = zo + random->nextInt(16) + 8;
+		Feature *tree = biome->getTreeFeature(random);
+		tree->init(1, 1, 1);
+		if (!level->isEmptyTile(x, level->getHeightmap(x, z)+105, z))
+		{
+			tree->place(level, random, x, level->getHeightmap(x, z)+105, z);
+			delete tree;
+		}
 	}
 	PIXEndNamedEvent();
 
@@ -361,6 +376,16 @@ void BiomeDecorator::decorateOres()
 	decorateDepthSpan(1, diamondOreFeature, 0, Level::genDepth / 8);
 	decorateDepthAverage(1, lapisOreFeature, Level::genDepth / 8, Level::genDepth / 8);
 	decorateDepthSpan(3, emeraldOreFeature, 64, Level::genDepth *8);
+
+	decorateDepthSpan(10, gravelOreFeature, 150, 256);
+	decorateDepthSpan(20, coalOreFeature, 150, 256);
+	decorateDepthSpan(20, ironOreFeature, 150, 256);
+	decorateDepthSpan(10, rubyOreFeature, 150, 256);
+
+	decorateDepthSpan(20, coalOreFeature, 175, 256);
+	decorateDepthSpan(20, ironOreFeature, 175, 256);
+	decorateDepthSpan(10, rubyOreFeature, 175, 256);
+
 
 	decorateDepthSpan(10, rubyOreFeature, 0, Level::genDepth / 6);
 
